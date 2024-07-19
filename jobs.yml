@@ -1,5 +1,5 @@
 - name: Ansible(Jenkins) job creation
-  hosts: localhost
+  hosts: 172.31.32.151
   tasks:
     name: Create jenkins jobs
     community.general.jenkins_job:
