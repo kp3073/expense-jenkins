@@ -6,5 +6,5 @@
         config: "{{ lookup('file','config.xml') }}"
         name: test-test
         password: admin123
-        url: http://172.31.95.12:8080
+        url: http://3.84.32.114:8080
         user: admin
