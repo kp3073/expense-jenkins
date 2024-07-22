@@ -5,7 +5,7 @@
     jenkins_username: admin
     jenkins_password: "{{ lookup('aws_ssm', 'jenkins_password', region='us-east-1' ) }}"
   tasks:
-    - name: Create jenkinsfile jobs - Frontend
+    - name: Create jenkins jobs - Frontend
       community.general.jenkins_job:
         config: "{{ lookup('template','config.xml') }}"
         name: Frontend
@@ -15,7 +15,7 @@
       vars:
         repo: frontend
 
-    - name: Create jenkinsfile jobs -Backend
+    - name: Create jenkins jobs -Backend
       community.general.jenkins_job:
         config: "{{ lookup('template','config.xml') }}"
         name: Backend
@@ -25,7 +25,7 @@
       vars:
         repo: backend
 
-    - name: Create jenkinsfile jobs - Expense Parameters
+    - name: Create jenkins jobs - Expense Parameters
       community.general.jenkins_job:
         config: "{{ lookup('template','config.xml') }}"
         name: Expense-Parameters
@@ -35,7 +35,7 @@
       vars:
         repo: parameter-store
 
-    - name: Create jenkinsfile jobs Expense Terraform
+    - name: Create jenkins jobs Expense Terraform
       community.general.jenkins_job:
         config: "{{ lookup('template','config.xml') }}"
         name: expense-jenkins-terraform
