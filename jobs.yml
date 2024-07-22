@@ -38,7 +38,7 @@
     - name: Create jenkinsfile jobs Expense Terraform
       community.general.jenkins_job:
         config: "{{ lookup('template','config.xml') }}"
-        name: expense-jenkinsfile-terraform
+        name: expense-jenkins-terraform
         password: "{{jenkins_password}}"
         url: "{{jenkins_url}}"
         user: "{{jenkins_username}}"
