@@ -43,4 +43,4 @@
         url: "{{jenkins_url}}"
         user: "{{jenkins_username}}"
       vars:
-        repo: expense-terraformv3
+        repo: expense-jenkins-terraform
