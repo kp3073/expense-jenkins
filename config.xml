@@ -2,6 +2,7 @@
 <flow-definition plugin="workflow-job@1400.v7fd111b_ec82f">
     <description></description>
     <keepDependencies>false</keepDependencies>
+    {% if "{{auto_trigger}}" == "true" %}
     <properties>
     <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
         <triggers>
@@ -22,6 +23,9 @@
         </triggers>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
 </properties>
+    {% else %}
+    <properties/>
+        {% endif %}
     <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3908.vd6b_b_5a_a_54010">
         <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.2">
             <configVersion>2</configVersion>
