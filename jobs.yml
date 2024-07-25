@@ -30,7 +30,7 @@
     - name: Create jenkins jobs - Expense Parameters
       community.general.jenkins_job:
         config: "{{ lookup('template','config.xml') }}"
-        name: expense-Parameters
+        name: Expense-Parameters
         password: "{{jenkins_password}}"
         url: "{{jenkins_url}}"
         user: "{{jenkins_username}}"
