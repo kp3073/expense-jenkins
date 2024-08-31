@@ -4,34 +4,35 @@
     <keepDependencies>false</keepDependencies>
     {% if auto_trigger == "true" %}
     <properties>
-    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-        <triggers>
-            <org.jenkinsci.plugins.gwt.GenericTrigger plugin="generic-webhook-trigger@2.2.2">
-                <spec></spec>
-                <regexpFilterText></regexpFilterText>
-                <regexpFilterExpression></regexpFilterExpression>
-                <printPostContent>false</printPostContent>
-                <printContributedVariables>false</printContributedVariables>
-                <causeString>Generic Cause</causeString>
-                <token>{{repo}}</token>
-                <tokenCredentialId></tokenCredentialId>
-                <silentResponse>false</silentResponse>
-                <overrideQuietPeriod>false</overrideQuietPeriod>
-                <shouldNotFlattern>false</shouldNotFlattern>
-                <allowSeveralTriggersPerBuild>false</allowSeveralTriggersPerBuild>
-            </org.jenkinsci.plugins.gwt.GenericTrigger>
-        </triggers>
-    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-</properties>
+        <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+            <triggers>
+                <org.jenkinsci.plugins.gwt.GenericTrigger plugin="generic-webhook-trigger@2.2.2">
+                    <spec></spec>
+                    <regexpFilterText></regexpFilterText>
+                    <regexpFilterExpression></regexpFilterExpression>
+                    <printPostContent>false</printPostContent>
+                    <printContributedVariables>false</printContributedVariables>
+                    <causeString>Generic Cause</causeString>
+                    <token>{{repo}}</token>
+                    <tokenCredentialId></tokenCredentialId>
+                    <silentResponse>false</silentResponse>
+                    <overrideQuietPeriod>false</overrideQuietPeriod>
+                    <shouldNotFlattern>false</shouldNotFlattern>
+                    <allowSeveralTriggersPerBuild>false</allowSeveralTriggersPerBuild>
+                </org.jenkinsci.plugins.gwt.GenericTrigger>
+            </triggers>
+        </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+    </properties>
     {% else %}
     <properties/>
-        {% endif %}
-    <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3908.vd6b_b_5a_a_54010">
+    {% endif %}
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition"
+                plugin="workflow-cps@3908.vd6b_b_5a_a_54010">
         <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.2">
             <configVersion>2</configVersion>
             <userRemoteConfigs>
                 <hudson.plugins.git.UserRemoteConfig>
-                    <url>https://github.com/kp3073/{{repo}}.git</url>
+                    <url>https://github.com/kp3073/{{repo}}</url>
                 </hudson.plugins.git.UserRemoteConfig>
             </userRemoteConfigs>
             <branches>
