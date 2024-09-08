@@ -15,6 +15,7 @@
       vars:
         repo: frontend
         auto_trigger: "true"
+        file_name: Jenkins
 
     - name: Create jenkins jobs -Backend
       community.general.jenkins_job:
@@ -26,6 +27,7 @@
       vars:
         repo: backend
         auto_trigger: "true"
+        file_name: Jenkins
 
     - name: Create jenkins jobs - Expense Parameters
       community.general.jenkins_job:
@@ -37,6 +39,7 @@
       vars:
         repo: parameter-store
         auto_trigger: "false"
+        file_name: Jenkins
 
     - name: Create jenkins jobs Expense Terraform
       community.general.jenkins_job:
@@ -48,3 +51,16 @@
       vars:
         repo: expense-jenkins-terraform
         auto_trigger: "false"
+        file_name: Jenkins
+
+    - name: Create jenkins jobs for Mutable Deployment
+      community.general.jenkins_job:
+        config: "{{ lookup('template','config.xml') }}"
+        name: Expense-ansible
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_username}}"
+      vars:
+        repo: expense-jenkins-terraform
+        auto_trigger: "false"
+        file_name: Jenkins-Mutable
