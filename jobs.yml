@@ -15,7 +15,7 @@
       vars:
         repo: frontend
         auto_trigger: "true"
-        file_name: Jenkins
+
 
     - name: Create jenkins jobs -Backend
       community.general.jenkins_job:
@@ -27,7 +27,7 @@
       vars:
         repo: backend
         auto_trigger: "true"
-        file_name: Jenkins
+
 
     - name: Create jenkins jobs - Expense Parameters
       community.general.jenkins_job:
