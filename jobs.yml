@@ -63,4 +63,4 @@
       vars:
         repo: Expense-ansible
         auto_trigger: "false"
-        file_name: Jenkins-Mutable
+        file_name: Jenkinsfile-Mutable
