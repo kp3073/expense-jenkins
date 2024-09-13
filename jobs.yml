@@ -39,7 +39,7 @@
       vars:
         repo: parameter-store
         auto_trigger: "false"
-        file_name: Jenkins
+        file_name: Jenkinsfile
 
     - name: Create jenkins jobs Expense Terraform
       community.general.jenkins_job:
@@ -51,7 +51,7 @@
       vars:
         repo: expense-jenkins-terraform
         auto_trigger: "false"
-        file_name: Jenkins
+        file_name: Jenkinsfile
 
     - name: Create jenkins jobs for Mutable Deployment
       community.general.jenkins_job:
