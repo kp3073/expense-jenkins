@@ -41,7 +41,7 @@
 
   - name: Create jenkins jobs expense-helmchart
     community.general.jenkins_job:
-      config: "{{ lookup('template','config.xml') }}"
+      config: "{{ lookup('template','multibranchconfig.xml') }}"
       name: expense-helmchart
       password: "{{jenkins_password}}"
       url: "{{jenkins_url}}"
