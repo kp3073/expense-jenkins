@@ -49,6 +49,7 @@
     vars:
       repo: expense-helmchart
       auto_trigger: "true"
+      file_name: Jenkinsfile
 
   - name: Create jenkins jobs expense-parameters-init
     community.general.jenkins_job:
